@@ -18,8 +18,9 @@ echo 'is followed by another command that retrieves the process ID (PID) value'
 echo 'of the previously run process (i.e. "npm start") and writes this value to'
 echo 'the file ".pidfile".'
 set -x
-cp -R ../../../ /home/ec2-user/app/
-cd /home/ec2-user/app/ && npm start &
+cd /home/ec2-user/app/
+cp -R /var/lib/jenkins/workspace/nodejs-jenkins /home/ec2-user/app/
+npm start &
 sleep 1
 echo $! > .pidfile
 set +x
