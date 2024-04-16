@@ -12,6 +12,7 @@ echo 'the file ".pidfile".'
 set -x
 cd /home/ec2-user/app/nodejs-jenkins
 cp -R /var/lib/jenkins/workspace/nodejs-jenkins /home/ec2-user/app/
+npm install
 npm start &
 sleep 1
 echo $! > .pidfile
