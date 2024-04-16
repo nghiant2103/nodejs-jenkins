@@ -18,7 +18,7 @@ echo 'is followed by another command that retrieves the process ID (PID) value'
 echo 'of the previously run process (i.e. "npm start") and writes this value to'
 echo 'the file ".pidfile".'
 set -x
-cp ./ /home/ec2-user/app/
+cp -R ../../../ /home/ec2-user/app/
 cd /home/ec2-user/app/ && npm start &
 sleep 1
 echo $! > .pidfile
